@@ -1,5 +1,5 @@
 /*
- * facebook-data-node
+ * tumblr-data-node
  */
 
 var PollerFactory = require('poller-node');
@@ -13,11 +13,10 @@ module.exports = {
   opts : {
     poller : {
       do_polling : true,
-      freq : 30*60*1000, 
-      //freq : 10*1000, 
+      freq : 30*60*1000
     },
     backfill : {
-      do_polling : false,
+      do_polling : false
     }
   },
 
@@ -51,7 +50,6 @@ module.exports = {
     var bs_opts = self.bstalk_opts.poller;
     var bspool = require('beanstalk-node');
     var poller = this.build();
-    //poller.graph.agent.maxSockets = Infinity;
 
     if (Array.isArray(users)){
       opts.users = users;
@@ -59,7 +57,7 @@ module.exports = {
 
     poller.emitter.on('link', function(job){
       bspool.put(job, function(){
-        //console.log('put_job:', job.tumblr_status_update.id);
+        console.log('put_job:', job.tumblr_status_update.id);
         self.stats.jobs_built+=1;
       });
     });
