@@ -1,0 +1,15 @@
+{
+    "name": "tumblr-data-node"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "shelby-config" : "git+ssh://git@github.com:ShelbyTV/shelby-config.git",
+      "beanstalk-node" : "git+ssh://git@github.com:ShelbyTV/beanstalk-node.git",
+      "redis-daos" : "git+ssh://git@github.com:ShelbyTV/redis-daos.git",
+      "poller-node" : "git+ssh://git@github.com:ShelbyTV/poller-node.git",
+      "factory-node" : "git+ssh://git@github.com:ShelbyTV/factory-node.git",
+      "eventemitter2" : "git://github.com/hij1nx/EventEmitter2.git",
+      "tumblr-api-client" : "git://github.com/mkrecny/tumblr-api-client.git"
+  }
+  , "main": "./index.js"
+}
