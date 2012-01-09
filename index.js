@@ -75,7 +75,6 @@ module.exports = {
     var bs_opts = self.bstalk_opts.backfill;
     var bspool = require('beanstalk-node');
     var backfiller = this.build();
-    backfiller.graph.agent.maxSockets = Infinity;
 
     backfiller.emitter.on('link', function(job){
       bspool.put(job, function(){
@@ -87,8 +86,9 @@ module.exports = {
       console.log('backpolling:', job.fb_id);
 
       var info = {
-        "facebook_id" : job.fb_id,
-        "access_token" : job.fb_access_token
+        "tumblr_id" : job.fb_id,
+        "access_token" : job.oauth_token,
+        "access_token_secret" : job.oauth_secret
       };
 
       backfiller.addUser(job.fb_id, info, function(){
