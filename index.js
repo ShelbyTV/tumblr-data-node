@@ -27,7 +27,7 @@ module.exports = {
       pool_size : '100'
     },
     backfill : {
-        resTube : 'fb_add_user',
+        resTube : 'tumblr_add_user',
         putTube : 'link_processing_high',
         pool_size : '200'
     }
