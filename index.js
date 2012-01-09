@@ -86,12 +86,12 @@ module.exports = {
       console.log('backpolling:', job.fb_id);
 
       var info = {
-        "tumblr_id" : job.fb_id,
+        "tumblr_id" : job.tumblr_id,
         "access_token" : job.oauth_token,
         "access_token_secret" : job.oauth_secret
       };
 
-      backfiller.addUser(job.fb_id, info, function(){
+      backfiller.addUser(job.tumblr_id, info, function(){
         backfiller.backfillUser(job.fb_id);
       });
 
