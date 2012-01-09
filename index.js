@@ -83,7 +83,7 @@ module.exports = {
     });
 
     bspool.emitter.on('newjob', function(job, del){
-      console.log('backpolling:', job.fb_id);
+      console.log('backpolling:', job.tumblr_id);
 
       var info = {
         "tumblr_id" : job.tumblr_id,
@@ -92,7 +92,7 @@ module.exports = {
       };
 
       backfiller.addUser(job.tumblr_id, info, function(){
-        backfiller.backfillUser(job.fb_id);
+        backfiller.backfillUser(job.tumblr_id);
       });
 
       del();
